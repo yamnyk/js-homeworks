@@ -1,30 +1,46 @@
-let value = +prompt('Enter two numbers','').split(' ');
-var result = [];
-let start = +value[0];
-let finish = +value[1];
+let value = prompt('Enter two numbers','').split(' ');
+let result = [];
+
+let start = 2, finish;
+
+if(value[0] > value[1]){
+    start = +value[1];
+    finish = +value[0];
+} else {
+    start = +value[0];
+    finish = +value[1];
+}
+
+console.log('start '+ start);
+console.log('finish ' + finish);
+
 while (isNaN(start) || isNaN(finish)){
-    value = +prompt ('Ведите число еще раз', '');
+    value = +prompt ('Enter two numbers again', '');
 }
-while(parseInt(value) !== value){
-    value = +prompt ('Введите целое число!!!')
-}
-
-if (value === 1){
-    console.log('Резюлтат:' + 1);
+while(parseInt(start) !== start || parseInt(finish) !== finish){
+    value = +prompt ('Enter integer number')
 }
 
-if (value === 2){
-    console.log('Резюлтат:' + 2);
+if (start === 1 && finish === 1){
+    console.log('Result:' + 1);
 }
 
-if (value === 3){
-    console.log('Резюлтат:' + '2, ' + '3');
+if(finish === 1){
+    console.log('Result:' + 1);
 }
-if (value > 3){
+
+if (finish === 2){
+    console.log('Result:' + 2);
+}
+
+if (finish === 3){
+    console.log('Result:' + '2, ' + '3');
+}
+if (finish > 3){
     if(value===2) console.log(2);
     let primes=[2];
     for(let itest=start;itest<=finish;itest+=2)
         if(!primes.some(function(pr){return !(itest%pr)}))
             primes.push(itest);
-    console.log(primes.toString());
+    console.log('Result: '+primes.toString());
 }
