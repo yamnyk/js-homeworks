@@ -1,9 +1,9 @@
 let value = prompt('Enter two numbers','').split(' ');
 let result = [];
 
-let start = 2, finish;
+let start = 1, finish;
 
-if(value[0] > value[1]){
+if(+value[0] > +value[1]){
     start = +value[1];
     finish = +value[0];
 } else {
@@ -21,26 +21,21 @@ while(parseInt(start) !== start || parseInt(finish) !== finish){
     value = +prompt ('Enter integer number')
 }
 
-if (start === 1 && finish === 1){
-    console.log('Result:' + 1);
+let primes=[];
+
+if(start === 1){
+    primes.push(2);
+    start = 3;
 }
 
-if(finish === 1){
-    console.log('Result:' + 1);
+if(start === 2){
+    primes.push(2);
+    start = 3;
 }
-
-if (finish === 2){
-    console.log('Result:' + 2);
-}
-
-if (finish === 3){
-    console.log('Result:' + '2, ' + '3');
-}
-if (finish > 3){
-    if(value===2) console.log(2);
-    let primes=[2];
-    for(let itest=start;itest<=finish;itest+=2)
-        if(!primes.some(function(pr){return !(itest%pr)}))
-            primes.push(itest);
-    console.log('Result: '+primes.toString());
-}
+for(let itest=start;itest<=finish;itest+=2)
+    if(!primes.some(function(pr){
+        return !(itest%pr);
+    })) {
+        primes.push(itest);
+    }
+console.log('Result: '+primes.toString());
