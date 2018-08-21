@@ -1,4 +1,8 @@
-let n = +prompt('Enter your number','');
+let n = prompt('Enter your number','');
+
+while(+n != n || isNaN(+n)){
+    n = prompt('Enter your number again','');
+}
 
 function fibo(n, cache) {
     cache = cache || [];
@@ -8,5 +12,7 @@ function fibo(n, cache) {
     if (n < 2) {
         return n;
     }
-    return cache[n] = fibonacci(n - 1, cache) + fibonacci(n - 2, cache);
+    return cache[n] = fibo(n - 1, cache) + fibo(n - 2, cache);
 }
+
+alert(fibo(n));
