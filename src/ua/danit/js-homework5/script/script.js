@@ -1,3 +1,15 @@
+function copyObject(obj){
+    let clone = {};
+    for (let key in obj) {
+        if(typeof obj[key] === 'object'){
+            console.log(typeof obj[key]);
+            clone[key] = copyObject(obj[key]);
+        }
+        clone[key] = obj[key];
+    }
+    return clone;
+}
+
 let user = {
     login: 'YamniskLox',
     pass: '123456',
@@ -12,24 +24,12 @@ let user = {
     }
 };
 
-function copyObject(obj){
-    let clone = {};
 
-    for (let key in obj) {
-        console.log(typeof obj[key]);
-        if(typeof(obj[key]) !== 'object'){
-            clone[key] = obj[key];
-        } else {
-            copyObject(obj[key]);
-        }
-    }
+let clo = copyObject(user);
+console.log('clone is ');
+clo.blabla = 'Gogi';
+clo.pets.type = 'fucking peace of devil';
+console.log(clo);
+console.log('original is ');
+console.log(user);
 
-    clone.name = 'Pip';
-    clone.pets.type = 'fluffy pies of shit';
-    console.log('clone is ');
-    console.log(clone);
-    console.log('original is ');
-    console.log(obj);
-}
-
-console.log(copyObject(user));
