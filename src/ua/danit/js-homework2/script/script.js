@@ -1,5 +1,4 @@
 let value = prompt('Enter two numbers','').split(' ');
-let result = [];
 
 let start = 1, finish;
 
