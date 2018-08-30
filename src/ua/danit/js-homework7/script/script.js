@@ -1,12 +1,12 @@
 function comparingObjArrays(objArray1, objArray2, property) {
-    return objArray2.filter(function (el) {
-        for(key in el){
-            if(key === property){
-                return true
-            }
-        }
-        return false
-    });
+    let res = [];
+    for (let i = 0; i < objArray2.length; i++) {
+        console.log(objArray2[i][property]);
+        console.log(objArray1.some(el => el[property] === objArray2[i][property]));
+        console.log('______');
+        objArray1.some(el => el[property] === objArray2[i][property]) ? true : res.push(objArray2[i]);
+    }
+    return res
 }
 
 let gogies1 = [{
