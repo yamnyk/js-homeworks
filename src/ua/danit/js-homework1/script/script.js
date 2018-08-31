@@ -3,7 +3,7 @@ let name = credentials[0];
 let age = +credentials[1];
 
 while(isNaN(age) || name === '' || name === ' '
-|| age === '' || age === ' ' || age.toString() !== credentials[1]){
+|| age === '' || age === ' ' || age.toString() !== age){
     let newCreds = prompt('Enter correct credentials \n Example: Ivan 42').split(' ');
     credentials[0] = newCreds[0];
     credentials[1] = newCreds[1];
