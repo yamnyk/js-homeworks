@@ -39,7 +39,6 @@ function includesIntoProps(el, property) {
 
 function findMatchesInPropsALL(el, propertiesToSearch, keyWords) {
     let counterOfMatchedKeywords = 0;
-    //FOR EVERY OBJECT using filter(){
      //FOR EVERY PROPERTY
          //find out if this property includes into propertiesToSearch with includesIntoProps()
          //if FALSE: next property
@@ -49,18 +48,15 @@ function findMatchesInPropsALL(el, propertiesToSearch, keyWords) {
                  //if TRUE: counterOfMatchedKeywords++
                  //if FALSE: next keyword
              return counterOfMatchedKeywords === keyWords.length
-    // }
 
 }
 
 function findMatchesInPropsANY(el, propertiesToSearch, keyWords) {
-    //FOR EVERY OBJECT: using filter() {
     // FOR EVERY PROPERTY:
          // find out if this includes into propertiesToSearch with includesIntoProps()
          //TRUE: is there any matches with keyWords array
                      //if it has first match - return true
          //FALSE (has no matches with keyWords array): return false
-    // }
     return undefined;
 }
 
