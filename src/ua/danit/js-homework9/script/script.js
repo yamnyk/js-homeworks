@@ -14,7 +14,7 @@ function getZodiacSign(day, month) {
         'libra':'Libra',
         'scorpio':'Scorpio',
         'sagittarius':'Sagittarius'
-    }
+    };
 
     if((month == 1 && day <= 20) || (month == 12 && day >=22)) {
         return zodiacSigns.capricorn;
