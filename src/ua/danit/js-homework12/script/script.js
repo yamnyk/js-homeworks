@@ -7,7 +7,12 @@ function drawCircle() {
         let fragment = document.createDocumentFragment();
         let circle = document.createElement('div');
 
-        circle.style = `width: ${radius.value}px; height: ${radius.value}px; background-color: ${color.value}; border-radius: 50%; margin-top: 8px`;
+        circle.style = `width: ${radius.value}px; 
+        height: ${radius.value}px; 
+        background-color: ${color.value}; 
+        border-radius: 50%; 
+        margin-top: 8px`;
+
         fragment.appendChild(circle);
         document.body.insertBefore(fragment, document.getElementById('circle-create'));
     } else {
