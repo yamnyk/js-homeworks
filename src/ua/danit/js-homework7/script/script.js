@@ -1,12 +1,7 @@
 function comparingObjArrays(objArray1, objArray2, property) {
-    let res = [];
-    for (let i = 0; i < objArray1.length; i++) {
-        console.log(objArray2[i][property]);
-        console.log(objArray1.some(el => el[property] === objArray2[i][property]));
-        console.log('______');
-        objArray2.some(el => el[property] === objArray1[i][property]) ? true : res.push(objArray1[i]);
-    }
-    return res
+        return !objArray1.filter(function (){
+            return objArray2.some(el => el[property] === objArray1[i][property])
+        });
 }
 
 let gogies1 = [{
@@ -33,7 +28,7 @@ let gogies2 = [{
     name: 'Gogo',
     age: 26
 }, {
-    name: 'Gog',
+    name: 'Gogp',
     age: 40
 }, {
     name: 'Gogi',
