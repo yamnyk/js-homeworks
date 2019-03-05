@@ -1,6 +1,6 @@
 function comparingObjArrays(objArray1, objArray2, property) {
-        return !objArray1.filter(function (){
-            return objArray2.some(el => el[property] === objArray1[i][property])
+        return objArray1.filter((elem) => {
+            return !objArray2.some(el => el[property] === elem[property])
         });
 }
 
@@ -35,4 +35,4 @@ let gogies2 = [{
     age: 18
 }];
 
-console.log(comparingObjArrays(gogies1, gogies2, 'name'));
+console.log(comparingObjArrays(gogies1, gogies2, 'age'));
